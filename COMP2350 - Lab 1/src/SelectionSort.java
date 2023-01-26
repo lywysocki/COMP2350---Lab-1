@@ -1,3 +1,4 @@
+import java.util.Scanner ;
 
 /**
  * 
@@ -30,10 +31,10 @@ public class SelectionSort
                     }
                 }
             int temp = array[i] ;
-            array[i] = min;
+            array[i] = min ;
             min = temp ;
             } // end for
-        return array;
+        return array ;
 
         }   // end selectionSort()
 
@@ -45,7 +46,12 @@ public class SelectionSort
      */
     public static void main( String[] args )
         {
-        // TODO Auto-generated method stub
+        Scanner input = new Scanner( System.in ) ;
+        
+        System.out.printf( "Please input size of array: ") ;
+        int arraySize = input.nextInt() ;
+        
+        int[] theArray = new int[]
 
         }
 

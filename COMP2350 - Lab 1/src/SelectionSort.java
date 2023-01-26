@@ -1,5 +1,3 @@
-import static edu.wit.scds.ds.sorting.Sorting.getIndexOfSmallest ;
-import static edu.wit.scds.ds.sorting.Sorting.swap ;
 
 /**
  * 

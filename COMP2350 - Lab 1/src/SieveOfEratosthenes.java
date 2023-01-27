@@ -1,18 +1,14 @@
 import java.util.Scanner ;
 
 /**
- * 
- * 
  * @author Laura Wysocki and Bryan DeFaria
- * @version 1.0.0 2023-01-26 Initial implementation
  *
+ * @version 1.0.0 2023-01-26 Initial implementation
  */
 public class SieveOfEratosthenes
     {
 
     /**
-     * 
-     * 
      * @param input
      */
     static void Sieve( int input )
@@ -29,49 +25,59 @@ public class SieveOfEratosthenes
             }
 
         // The main "logic" that determines if a number is prime or not
-        int j;
+        int j ;
         for ( int i = 2 ; ( i * i ) <= input ; i++ )
             {
-                if( numbers[i] != 0 )
+            if ( numbers[ i ] != 0 )
+                {
+                j = i * i ;
+                while ( j <= input )
                     {
-                    j = i*i;
-                    while( j <= input )
-                        {
-                        numbers[j] = 0;
-                        j+= i;
-                        }
+                    numbers[ j ] = 0 ;
+                    j += i ;
+
                     }
+
+                }
+
             }
-        
+
         // Iterates another list that will contain all the prime numbers
-        int prime[] = new int [input + 1];
-        int count = 0;
-        
+        int prime[] = new int[ input + 1 ] ;
+        int count = 0 ;
+
         // Moves all non-zero numbers from numbers[] to prime[]
-        for( int i = 2; i <= input; i++)
+        for ( int i = 2 ; i <= input ; i++ )
             {
-            if( numbers[i] != 0)
+            if ( numbers[ i ] != 0 )
                 {
-                prime[count] = numbers[ i ];
-                count++;
+                prime[ count ] = numbers[ i ] ;
+                count++ ;
+
                 }
+
             }
-        
-        // The prime number list has excess entries toward the end, for loop prints out values until reaching "0", where it ends
-        for( int i = 0; i < prime.length; i++ )
+
+        // The prime number list has excess entries toward the end, for loop prints
+        // out values until reaching "0", where it ends
+        String s = "" ;
+        for ( int element : prime )
             {
-            if( prime[i] == 0 )
+            if ( element == 0 )
                 {
-                break;
+                break ;
+
                 }
-            System.out.print( prime[i] );
+
+            System.out.printf( s + element ) ;
+            s = ", " ;
+
             }
 
         }
-    
+
+
     /**
-     * 
-     * 
      * @param args
      */
     public static void main( String args[] )
@@ -82,7 +88,7 @@ public class SieveOfEratosthenes
         try ( Scanner response = new Scanner( System.in ) )
             {
             int input = response.nextInt() ;
-            
+
             Sieve( input ) ;
 
             }
@@ -90,4 +96,4 @@ public class SieveOfEratosthenes
         }
 
     }
-   // end class SieveOfEratisthenes
+// end class SieveOfEratisthenes

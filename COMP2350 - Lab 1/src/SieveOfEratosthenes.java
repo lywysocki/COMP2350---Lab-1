@@ -9,7 +9,10 @@ public class SieveOfEratosthenes
     {
 
     /**
+     * creates a sieve of Eratosthenes up to an inputed integer
+     * 
      * @param input
+     *     given number that shall not be exceeded
      */
     static void Sieve( int input )
         {
@@ -22,7 +25,7 @@ public class SieveOfEratosthenes
             {
             numbers[ i ] = i ;
 
-            }
+            } // end for
 
         // The main "logic" that determines if a number is prime or not
         int j ;
@@ -36,11 +39,11 @@ public class SieveOfEratosthenes
                     numbers[ j ] = 0 ;
                     j += i ;
 
-                    }
+                    } // end while
 
-                }
+                } // end if
 
-            }
+            } // end for
 
         // Iterates another list that will contain all the prime numbers
         int prime[] = new int[ input + 1 ] ;
@@ -54,9 +57,9 @@ public class SieveOfEratosthenes
                 prime[ count ] = numbers[ i ] ;
                 count++ ;
 
-                }
+                } // end if
 
-            }
+            } // end for
 
         // The prime number list has excess entries toward the end, for loop prints
         // out values until reaching "0", where it ends
@@ -72,13 +75,16 @@ public class SieveOfEratosthenes
             System.out.printf( s + element ) ;
             s = ", " ;
 
-            }
+            } // end for
 
-        }
+        } // end Sieve()
 
 
     /**
+     * Main method to take in user input from console and execute Sieve method
+     * 
      * @param args
+     *     a command like argument for the application
      */
     public static void main( String args[] )
         {
@@ -93,7 +99,7 @@ public class SieveOfEratosthenes
 
             }
 
-        }
+        } // end main()
 
     }
 // end class SieveOfEratisthenes
